@@ -1,0 +1,61 @@
+// myList.erase()
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+
+    l.erase(next(l.begin(), 2), next(l.begin(), 9));
+
+    for (int val : l)
+    {
+        cout << val << endl;
+    }
+    return 0;
+}
+
+
+
+// replace(myList.begin().myList.end(), value, replace_value)
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {10,20,30,40,20,60,20,80,90,100};
+    replace(l.begin(),l.end(),20,100);
+
+    for(int val:l)
+    {
+        cout<<val<<endl;
+    }
+    return 0;
+}
+
+
+
+
+//find(myList.begin(), myList.end(),v)
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {10,20,30,40,50,60,70,80,90,100};
+
+
+    auto it = find(l.begin(), l.end(), 20);
+    if(it == l.end())
+    {
+        cout<<"Not found"<<endl;
+    }
+    else{
+        cout<<"found"<<endl;
+    }
+    for(int val:l)
+    {
+        cout<<val<<endl;
+    }
+    return 0;
+}
