@@ -1,0 +1,94 @@
+// myList = or myList.assign(list2.begin(), list2end())
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {10,20,30};
+    list<int> l2;
+    l2 = l; 
+
+   //or
+
+   l2.assign(l.begin(),l.end());
+
+    for(int val:l2)
+    {
+        cout<<val<<endl;
+    }
+    return 0;
+}
+
+
+
+
+
+
+//myList.push_back() & myList.push front()
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {10,20,30};
+
+    l.push_back(40);
+    l.push_front(100);
+
+    for(int val : l)
+    {
+        cout<<val << endl;
+    }
+    return 0;
+}
+
+
+
+
+
+//myList.Insert()
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {10,20,30};
+    l.insert(next(l.begin(),2), 100);   //next(l.begin(),ind[যে idx এ add করতে চাই], যে value insert করবো)
+
+    for(int val:l)
+    {
+        cout<<val<<endl;
+    }
+    return 0;
+}
+
+// OR-> myList.Insert() Multipal
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {10,20,30};
+    list<int> l2 = {100,200};
+
+    l.insert(next(l.begin(),2), l2.begin(), l2.end());
+    for(int val:l)
+    {
+        cout<<val<<endl;
+    }
+    return 0;
+}
+
+
+
+//next(myList.begin(),idx)
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {10,20,30};
+
+    cout<<*next(l.begin(),2);
+    return 0;
+}
