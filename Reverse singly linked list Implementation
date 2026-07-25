@@ -67,9 +67,9 @@ int main()
         insert_at_tail(head, tail, val);
     }
     reverse_linked_list(head,tail,head);     //1st head-> head, & last head-> head er tmp.
-   // print_linked_list(head);
+    print_linked_list(head);
 
-    cout<<head->val<<endl;  //proved head er value.
-    cout<<tail->val<<endl;  //proved tail er value.
+   // cout<<head->val<<endl;  //proved head er value.
+   // cout<<tail->val<<endl;  //proved tail er value.
     return 0;
 }
