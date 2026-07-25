@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+using namespace std;
+ class Node
+ {
+    public: 
+        int val;
+        Node* next;
+    Node(int val)
+    {
+        this->val = val;
+        this->next = NULL;
+    }
+ };
+
+void insert_at_tail(Node* &head,Node* &tail, int val)
+{
+    Node* newnode = new Node(val);
+
+    if(head == NULL)    //coner case
+    {
+        head = newnode;
+        tail = newnode;
+        return;
+
+    }
+    tail->next = newnode;
+    tail = tail->next;  //or: tail = newnode;
+}
+
+void print_linked_list(Node* head)
+{
+    Node* tmp = head;
+    while(tmp != NULL)
+    {
+        cout<<tmp->val<<endl;
+        tmp = tmp->next;
+    } 
+} 
+
+//recerson
+void reverse_linked_list(Node* &head,Node* &tail, Node* tmp)
+{
+    //bace case
+    if(tmp->next == NULL)
+    {
+        head = tmp;
+        return;
+    }
+    reverse_linked_list(head,tail,tmp->next);
+    tmp->next->next = tmp;  //reverse er main line
+    tmp->next = NULL;
+    tail = tmp;
+}
+int main()
+{
+    Node* head = NULL;
+    Node* tail = NULL;
+
+    int val;
+    while(true)
+    {
+        cin>>val;
+        if(val == -1)
+        {
+            break;
+        }
+        insert_at_tail(head, tail, val);
+    }
+    reverse_linked_list(head,tail,head);     //1st head-> head, & last head-> head er tmp.
+   // print_linked_list(head);
+
+    cout<<head->val<<endl;  //proved head er value.
+    cout<<tail->val<<endl;  //proved tail er value.
+    return 0;
+}
