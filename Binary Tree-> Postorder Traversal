@@ -14,13 +14,13 @@ using namespace std;
     }
  };
 
- void Inoder(Node* root)
+ void Postoder(Node* root)
  {
     if(root == NULL)
         return;
 
-    Inoder(root->left);    //left
-    Inoder(root->right);    //right
+    Postoder(root->left);    //left
+    Postoder(root->right);    //right
     cout<<root->val<<" ";   //root
 
  }
@@ -40,7 +40,7 @@ int main()
     b->right = e;
 
 
-    Inoder(root);
+    Postoder(root);
     
     return 0;
 }
